@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Weather Dashboard</h1>
+    <form id="weatherForm">
+      <input type="text" id="cityInput" placeholder="Enter city name" required />
+      <button type="submit">Get Weather</button>
+    </form>
+    <div id="weatherResult"></div>
+  </div>
+
+  <script>
+    const form = document.getElementById("weatherForm");
+    const cityInput = document.getElementById("cityInput");
+    const resultDiv = document.getElementById("weatherResult");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const city = cityInput.value.trim();
+      if (!city) return;
+
+      resultDiv.innerHTML = "<p>Loading...</p>";
+
+      try {
+        const response = await fetch("/get_weather", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ city }),
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+          resultDiv.innerHTML = `
+            <h2>${data.city}</h2>
+            <p>Temperature: ${data.temp}°C</p>
+            <p>Weather: ${data.main} (${data.description})</p>
+          `;
+        } else {
+          resultDiv.innerHTML = `<p>Error: ${data.error}</p>`;
+        }
+      } catch (error) {
+        resultDiv.innerHTML = `<p>Error fetching data</p>`;
+      }
+    });
+  </script>
+</body>
+</html>
