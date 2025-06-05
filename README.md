@@ -5,7 +5,7 @@ INTERN ID : CT06DM65
 DOMAIN : FULL STACK WEB DEVELOPMENT
 DURATION : 6 WEEKS
 MENTOR : NEELA SANTHOSH KUMAR
-DESCRIPTION :
+#DESCRIPTION :
 The main goal of this project was to demonstrate how APIs can be integrated into a web application to fetch and display data dynamically.
 I wanted to keep the design and functionality simple yet effective so that anyone reviewing the project could clearly understand how API requests and responses work in a full-stack environment.
 
@@ -22,4 +22,8 @@ The server then makes a call to an external API, processes the data it receives,
 One of the most useful aspects of this project was learning to work with API endpoints, manage JSON data, and update the front end with that data in real-time. 
 I also created a requirements.txt file to list all the dependencies, making it easy for others to set up the project environment using pip install.
 
-OUTPUT :
+#OUTPUT :
+![Image](https://github.com/user-attachments/assets/724c3d11-d2f5-4550-b6e2-c8ec4a25474b)
+![Image](https://github.com/user-attachments/assets/f5aeaadd-0628-4320-a3b1-d440158f463d)
+![Image](https://github.com/user-attachments/assets/be84d695-ed25-42a2-b994-3c1715ff37d8)
+![Image](https://github.com/user-attachments/assets/7d78167c-4e79-4564-8dbf-be8cca012e78)
